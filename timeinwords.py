@@ -23,6 +23,8 @@ tests = [(5,47), (3,00), (7,15)]
 
 output_tests = ['thirteen minutes to six', "three o' clock", 'quarter past seven']
 
+#If I put a commet here, I may not be able to read it.
+
 for i in range(3):
     h = tests[i][0]
     m = tests[i][1]

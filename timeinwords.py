@@ -17,17 +17,19 @@ import sys
 
 def timeInWords(h, m):
     # Write your code here
+    return "three o' clock"
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+tests = [(5,47), (3,00), (7,15)]
 
-    h = int(input().strip())
+output_tests = ['thirteen minutes to six', "three o' clock", 'quarter past seven']
 
-    m = int(input().strip())
+for i in range(3):
+    h = tests[i][0]
+    m = tests[i][1]
+    r = output_tests[i]
+    if timeInWords(h,m) == r:
+        print(f'Test number {i+1}: Success!!')
+    else:
+        print(f'Test number {i+1}: Failed!!')
 
-    result = timeInWords(h, m)
-
-    fptr.write(result + '\n')
-
-    fptr.close()
 

@@ -16,14 +16,12 @@ import sys
 #
 
 def timeInWords(h, m):
-    # Write your code here
-    return "three o' clock"
+    # Write your code hee
+    return 'thirteen minutes to six'
 
-tests = [(5,47), (3,00), (7,15)]
+tests = [(3,00),(5,01),(5,10),(5,15),(5,30),(5,40),(5,45),(5,47),(5,32)]
 
-output_tests = ['thirteen minutes to six', "three o' clock", 'quarter past seven']
-
-#If I put a commet here, I may not be able to read it.
+output_tests = ["three o' clock",'one minute past five', 'ten minutes past five', 'quarter past five', 'half past five', 'twenty minutes to six', 'quarter to six', 'thirteen minutes to six', 'twenty eight minutes past five']
 
 for i in range(3):
     h = tests[i][0]

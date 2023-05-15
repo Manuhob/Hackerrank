@@ -17,7 +17,7 @@ import sys
 
 def gridSearch(G, P):
     # Write your code here
-    pass
+    return 'YES'
 
 def stringtoarray(s):
     result = []
@@ -25,8 +25,10 @@ def stringtoarray(s):
         result.append(x)
     return result
 
+#Test case creation
+tests = []
 
-#Test case 1
+#Test case 2
 s = '7283455864 6731158619 8988242643 3830589324 2229505813 5633845374 6473530293 7053106601 0834282956 4607924137'
 G = []
 for x in s.split(' '):
@@ -35,10 +37,9 @@ s = '9505 3845 3530'
 P = []
 for x in s.split(' '):
     P.append(stringtoarray(x))
+tests.append((G,P))
 
-print(gridSearch(G, P))
-
-#Test case n
+#Test case 2
 s = '400453592126560 114213133098692 474386082879648 522356951189169 887109450487496 252802633388782 502771484966748 075975207693780 511799789562806 404007454272504 549043809916080 962410809534811 445893523733475 768705303214174 650629270887160'
 G = []
 for x in s.split(' '):
@@ -48,7 +49,21 @@ P = []
 for x in s.split(' '):
     P.append(stringtoarray(x))
 
-print(gridSearch(G, P))
+tests.append((G,P))
+
+output_tests = ['YES', 'NO']
+
+for i in range(len(tests)):
+    G = tests[i][0]
+    P = tests[i][1]
+    r = output_tests[i]
+    if gridSearch(G,P) == r:
+        print(f'Test number {i+1}: Success!!')
+        print(gridSearch(G,P), '\n')
+    else:
+        print(f'Test number {i+1}: Failed!!')
+        print(gridSearch(G,P), ' vs ', r)
+
 
 
 

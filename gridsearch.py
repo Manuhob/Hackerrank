@@ -16,16 +16,30 @@ import sys
 #
 
 def gridSearch(G, P):
-    # Write your code here
-    return 'YES'
+    C = len(G[0])
+    c = len(P[0])
+    R = len(G)
+    r = len(P)
+    if C < c :
+        return 'NO'
 
+    result = 'NO'
+
+    l1 = ''.join(P[0])
+    for x in G:
+        for i in range(C - c + 1):
+            if l1 == ''.join(x[i:i+c]):
+                print('Coincidence at row ', ''.join(x), 'with subline', l1)
+                return 'YES'
+    return result 
+
+#Test case creation
 def stringtoarray(s):
     result = []
     for x in s:
         result.append(x)
     return result
 
-#Test case creation
 tests = []
 
 #Test case 2
@@ -53,16 +67,19 @@ tests.append((G,P))
 
 output_tests = ['YES', 'NO']
 
-for i in range(len(tests)):
-    G = tests[i][0]
-    P = tests[i][1]
-    r = output_tests[i]
-    if gridSearch(G,P) == r:
-        print(f'Test number {i+1}: Success!!')
-        print(gridSearch(G,P), '\n')
-    else:
-        print(f'Test number {i+1}: Failed!!')
-        print(gridSearch(G,P), ' vs ', r)
+print(gridSearch(tests[0][0],tests[0][1]))
+
+
+#for i in range(len(tests)):
+#    G = tests[i][0]
+#    P = tests[i][1]
+#    r = output_tests[i]
+#    if gridSearch(G,P) == r:
+#        print(f'Test number {i+1}: Success!!')
+#        print(gridSearch(G,P), '\n')
+#    else:
+#        print(f'Test number {i+1}: Failed!!')
+#        print(gridSearch(G,P), ' vs ', r)
 
 
 

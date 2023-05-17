@@ -23,15 +23,20 @@ def gridSearch(G, P):
     if C < c :
         return 'NO'
 
-    result = 'NO'
-
-    l1 = ''.join(P[0])
-    for x in G:
+    for j in range(len(G)):
+        if r > R - j:
+            return 'NO'
         for i in range(C - c + 1):
-            if l1 == ''.join(x[i:i+c]):
-                print('Coincidence at row ', ''.join(x), 'with subline', l1)
+            if arrayComparison(G,P,j,i) == 'YES':
                 return 'YES'
-    return result 
+    return 'NO'
+
+def arrayComparison(G,P,j,i):
+    for k in range(len(P)):
+        if ''.join(P[k]) != ''.join(G[j+k][i:i+len(P[k])]):
+            return 'NO'
+    return 'YES'
+
 
 #Test case creation
 def stringtoarray(s):
@@ -67,19 +72,19 @@ tests.append((G,P))
 
 output_tests = ['YES', 'NO']
 
-print(gridSearch(tests[0][0],tests[0][1]))
 
 
-#for i in range(len(tests)):
-#    G = tests[i][0]
-#    P = tests[i][1]
-#    r = output_tests[i]
-#    if gridSearch(G,P) == r:
-#        print(f'Test number {i+1}: Success!!')
-#        print(gridSearch(G,P), '\n')
-#    else:
-#        print(f'Test number {i+1}: Failed!!')
-#        print(gridSearch(G,P), ' vs ', r)
+#Testing cases with function
+for i in range(len(tests)):
+    G = tests[i][0]
+    P = tests[i][1]
+    r = output_tests[i]
+    if gridSearch(G,P) == r:
+        print(f'Test number {i+1}: Success!!')
+        print(gridSearch(G,P), '\n')
+    else:
+        print(f'Test number {i+1}: Failed!!')
+        print(gridSearch(G,P), ' vs ', r)
 
 
 

@@ -1,11 +1,3 @@
-#n containers with n type of balls. We want to sort them in the containers by type, but only with "pairs swapings"
-
-#The following function will tell us if it is possible to do so or not.
-
-#Algorithm description:
-    #make a list of amount of balls in each container
-    #make a list of amount of balls of each type
-    #if after sorting the above lists, we have a coincidence, then return possible, otherwise impossible    
 def organizingContainers(container):
     ballsperContainer = [] #amount of balls in each container
     n = len(container[0])

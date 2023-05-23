@@ -56,18 +56,20 @@ def main():
     while True:
         print('\n')
         printmenu()
-        i = int(input())
+        i = input()
 
-        if i==1:
+        if i=='1':
             data = input('Insert node data: ')
             llist = insertnode(llist,data)
-        if i==2:
+        elif i=='2':
             print('Deleting last node')
             llist = deletenode(llist)
-        elif i ==3:
+        elif i =='3':
             printlist(llist)
-        elif i == 4:
+        elif i == '4':
             break
+        else:
+            print('Non-valid option. Try again!')
 
 if __name__ == "__main__":
     main()

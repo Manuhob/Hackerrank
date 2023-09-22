@@ -104,3 +104,16 @@ if __name__ == '__main__':
 
     print('After the first swap')
     print('\n'.join([ ' '.join(map(str, x)) for x in result]))
+
+
+
+# A beautiful solution based on an inOrder swapping!
+
+# sys.setrecursionlimit(int(1e9))
+#
+# def swapNodes(t, queries):
+#     t = [[]] + t  # make 1-based indexes work
+#     def f(k,r=1,d=1):
+#         t[r] = t[r] if d%k else t[r][::-1]
+#         return f(k,t[r][0],d+1)+[r]+f(k,t[r][1],d+1) if r+1 else []
+#     return [f(i) for i in queries]

@@ -1,1 +1,2 @@
-In this repository, I'll upload my solutions to some of the medium-hard difficulty in Hackerrank, mostly about in the algorithm section.
+Some of my solutions in Hackerrank. Particularly, the medium-hard difficulty in algorithms and data structures.
+
